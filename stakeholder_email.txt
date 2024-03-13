@@ -1,0 +1,32 @@
+Hi [Stakeholder's name],
+
+Hope your day is going well!
+
+As requested, I have done an initial assessment of the Fetch rewards data, specifically looking into
+users, brands, and receipts.
+
+I used python to analyze the data since the files provided were zipped .json files.
+I did run into an issue where I was unable to unzip and use those .json files and had to convert them 
+to csv so my findings are based on the converted csv files which are attached. 
+
+Depending on how often this data will need to be ingested and how large the data loads are anticipated to 
+be, it could cause issues moving into production. Runtime extending into the next run or runs failing
+due to how much data is being called are potential issues.
+There are work-arounds we can do: breaking up data by limiting how much we bring in each pull and 
+by figuring out a schedule that works best for this data. 
+
+In addition, there are a few questions I have/observations about the data and wanted to see if you have 
+any insight into why from a business standpoint.
+
+ -- How is this data being accessed? And are these all the fields that can be provided or 
+ can more be requested? This would help in understanding the data more and to see if 
+ it can explain any issues I came across.
+ -- There are around 300 null receipt ids, what is usually the cause of this?
+ -- There are few records where purchase date is after finished date, what is usually the cause of this?
+ Are users able to edit after submitting? 
+ -- Not all brands are unique, is this something we should deduplicate in our models?
+
+I know there is a lot in this email, I would be glad to set up some time to go over the data in more detail!
+
+Best,
+Gautami
